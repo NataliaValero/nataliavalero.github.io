@@ -1,1 +1,3 @@
 include: [".well-known"]
+baseurl: "" # deja esto vacío si tu sitio está en la raíz del dominio
+url: "https://resetpassword.github.io" # URL de tu sitio
