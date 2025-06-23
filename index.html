@@ -1,18 +1,29 @@
-<script>
-  window.onload = () => {
-    const hash = window.location.hash.substring(1); // Quita '#'
-    const query = new URLSearchParams(hash);
-    const token = query.get("access_token");
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Redirecting to Stockeep App…</title>
+    <script>
+      window.onload = () => {
+        const hash = window.location.hash.substring(1); // Quita '#'
+        const query = new URLSearchParams(hash);
+        const token = query.get("access_token");
 
-    if (token) {
-      const intentUrl =
-        `intent://resetpassword?access_token=${token}#Intent;scheme=https;host=nataliavalero.github.io;package=com.example.stockeepproject;S.browser_fallback_url=https%3A%2F%2Fnataliavalero.github.io%2Fresetpassword%2F;end`;
+        if (token) {
+          const intentUrl =
+            `intent://resetpassword?access_token=${token}#Intent;scheme=https;host=nataliavalero.github.io;package=com.example.stockeepproject;S.browser_fallback_url=https%3A%2F%2Fnataliavalero.github.io%2Fresetpassword%2F;end`;
 
-      window.location.href = intentUrl;
-    } else {
-      document.body.innerHTML =
-        "<p style='color:red;'>❌ Access token not found in the URL.</p>";
-    }
-  };
-</script>
+          window.location.href = intentUrl;
+        } else {
+          document.body.innerHTML =
+            "<p style='color:red;'>❌ Access token not found in the URL.</p>";
+        }
+      };
+    </script>
+  </head>
+  <body>
+    <p>🔄 Redirecting to the Stockeep app…</p>
+  </body>
+</html>
+
 
