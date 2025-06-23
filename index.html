@@ -5,10 +5,13 @@
     <title>Redirecting to Stockeep App…</title>
     <script>
       window.onload = () => {
-        const query = new URLSearchParams(window.location.search); // usa query string
-        const token = query.get("access_token");
+        // Leer token del fragmento (#access_token=...)
+        const hash = window.location.hash.substring(1);
+        const hashParams = new URLSearchParams(hash);
+        const token = hashParams.get("access_token");
 
         if (token) {
+          // Construir intent URL con token en query string para Android
           const intentUrl =
             `intent://resetpassword?access_token=${token}#Intent;scheme=https;host=nataliavalero.github.io;package=com.example.stockeepproject;S.browser_fallback_url=https%3A%2F%2Fnataliavalero.github.io%2Fresetpassword%2F;end`;
 
@@ -24,5 +27,6 @@
     <p>🔄 Redirecting to the Stockeep app…</p>
   </body>
 </html>
+
 
 
