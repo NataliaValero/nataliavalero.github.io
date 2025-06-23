@@ -5,8 +5,7 @@
     <title>Redirecting to Stockeep App…</title>
     <script>
       window.onload = () => {
-        const hash = window.location.hash.substring(1); // Quita '#'
-        const query = new URLSearchParams(hash);
+        const query = new URLSearchParams(window.location.search); // usa query string
         const token = query.get("access_token");
 
         if (token) {
