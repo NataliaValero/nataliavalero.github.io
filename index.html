@@ -1,32 +1,13 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="UTF-8" />
-    <title>Redirecting to Stockeep App…</title>
-    <script>
-      window.onload = () => {
-        // Leer token del fragmento (#access_token=...)
-        const hash = window.location.hash.substring(1);
-        const hashParams = new URLSearchParams(hash);
-        const token = hashParams.get("access_token");
-
-        if (token) {
-          // Construir intent URL con token en query string para Android
-          const intentUrl =
-            `intent://resetpassword?access_token=${token}#Intent;scheme=https;host=nataliavalero.github.io;package=com.example.stockeepproject;S.browser_fallback_url=https%3A%2F%2Fnataliavalero.github.io%2Fresetpassword%2F;end`;
-
-          window.location.href = intentUrl;
-        } else {
-          document.body.innerHTML =
-            "<p style='color:red;'>❌ Access token not found in the URL.</p>";
-        }
-      };
-    </script>
-  </head>
-  <body>
-    <p>🔄 Redirecting to the Stockeep app…</p>
-  </body>
+<head>
+    <title>Link to redirect to the Business Invoice App for password reset</title>
+</head>
+<body>
+    <h1>Link to redirect to the Business Invoice App for password reset</h1>
+</body>
 </html>
+
 
 
 
